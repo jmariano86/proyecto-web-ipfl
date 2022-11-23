@@ -20,6 +20,7 @@ body{
     color: white;
     text-transform: uppercase;
     font-weight: 700;
+    text-align: center;
 }
 .box input[ type="text"], input[type="password"] {
     background: none;

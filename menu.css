@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: url(./PedidosJa1024_1.jpg);
+    background-size: auto;
+}
+
+.usuario{
+    width: 300;
+     padding: 30px;
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     background: rgba(151, 13, 13, 0.4);
+     text-align: center;
+     color: white;
+}
+.usuario h1{
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+.control{
+    width: auto;
+    background: #96454c;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #1f53c1;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    color: white;
+    
+    
+}
+.boton{
+    width: 100%;
+    background: rgba(151, 13, 13, 0.4);
+    border: none;
+    padding: 12px;
+    color: white;
+    margin: 16px 0;
+    font-size: 16px;
+    
+}
+.usuario p {
+    line-height: 40px;
+}
+
+
