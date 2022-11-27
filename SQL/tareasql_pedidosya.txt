@@ -1,0 +1,111 @@
+CREATE TABLE usuario
+(id_usuario int primary key,
+nombre_usuario varchar(50),
+contrasenia varchar(50),
+direccion varchar(50)
+);
+
+CREATE TABLE producto
+(id_producto int primary key,
+descripcion varchar(50),
+proveedor varchar(50),
+);
+
+CREATE TABLE pedido
+(producto int,
+usuario int,
+cantidad int,
+id_factura int primary key,
+monto int,
+)
+
+CREATE TABLE factura
+(id int primary key,
+monto int,
+tipo_pago varchar(50),
+)
+
+*****************
+
+INSERT INTO usuario VALUES (31, 'Juan Perez', '12345678', 'Calle 1 150');
+INSERT INTO usuario VALUES (45, 'Alberto Gomez', 'abc123456', 'Calle 142 2300');
+INSERT INTO usuario VALUES (82, 'Jose Mendoza', 'a1s2d3d4e5', 'Calle 182 15');
+INSERT INTO usuario VALUES (150, 'Pedro Santillan', '987654321', 'Olavarria 785');
+INSERT INTO usuario VALUES (324, 'Luis Rodriguez', 'abcd12345', 'Lamadrid 5203');
+INSERT INTO usuario VALUES (421, 'Rosario Martinez', 'qwerty12345', 'Lavalle 222');
+INSERT INTO usuario VALUES (5205, 'Ana Tinoco', 'q1w2e3r4t5', 'Gral. San Martin 3244');
+INSERT INTO usuario VALUES (722, 'Rocio Atlantis', 'qazwsx741852', 'Av. Del Libertador 150');
+
+*****************
+
+INSERT INTO producto VALUES (1, 'Pizza Muzzarella Grande', 'Panaderia Amigos');
+INSERT INTO producto VALUES (2, 'Pizza Muzzarella Chica', 'Panaderia Amigos');
+INSERT INTO producto VALUES (5, 'Gaseosa Coca-Cola 2.25lts', 'Distribuidora José');
+INSERT INTO producto VALUES (6, 'Gaseosa Coca-Cola 1.75lts', 'Distribuidora José');
+INSERT INTO producto VALUES (9, 'Empanadas Carne x12', 'Congelados Helarte');
+INSERT INTO producto VALUES (10, 'Empanadas Pollo x6', 'Congelados Helarte');
+INSERT INTO producto VALUES (15, 'Postre Tiramisú', 'Balcarce');
+INSERT INTO producto VALUES (17, 'Postre Balcarce', 'Balcarce');
+
+
+*****************
+
+
+INSERT INTO pedido VALUES (1, 45, 2, 78522, 250);
+INSERT INTO pedido VALUES (5, 45, 6, 79221, 1350);
+INSERT INTO pedido VALUES (10, 150, 2, 81111, 1020);
+INSERT INTO pedido VALUES (10, 5205, 1, 81177, 510);
+INSERT INTO pedido VALUES (17, 722, 1, 91452, 1500);
+INSERT INTO pedido VALUES (9, 324, 10, 87003, 5100);
+INSERT INTO pedido VALUES (6, 722, 1, 92001, 200);
+INSERT INTO pedido VALUES (15, 82, 2, 92775, 3100);
+
+*****************
+
+INSERT INTO factura VALUES (78522, 250, 'Efectivo');
+INSERT INTO factura VALUES (79221, 1350, 'Credito');
+INSERT INTO factura VALUES (81111, 1020, 'Aplicacion');
+INSERT INTO factura VALUES (81177, 510, 'Efectivo');
+INSERT INTO factura VALUES (91452, 1500, 'Aplicacion');
+INSERT INTO factura VALUES (87003, 5100, 'Credito');
+INSERT INTO factura VALUES (92001, 200, 'Efectivo');
+INSERT INTO factura VALUES (92775, 3100, 'Aplicacion');
+
+*****************
+
+PUNTO A
+
+SELECT producto, usuario, cantidad, monto FROM pedido
+JOIN usuario
+ON pedido.usuario=usuario.id_usuario;
+
+PUNTO B
+
+SELECT producto, pedido.monto, factura.tipo_pago FROM pedido
+JOIN factura
+ON pedido.id_factura=factura.id;
+
+PUNTO C
+
+SELECT descripcion, cantidad, monto FROM pedido
+JOIN producto
+ON pedido.producto=producto.id_producto
+
+PUNTO D
+
+SELECT id FROM factura WHERE tipo_pago='Efectivo'
+
+PUNTO E
+
+SELECT usuario FROM pedido
+
+PUNTO F 
+
+SELECT monto FROM factura WHERE monto>500
+
+PUNTO G
+
+UPDATE facturas
+SET tipo_pago='Debito'
+WHERE tipo_pago='Aplicacion'
+
