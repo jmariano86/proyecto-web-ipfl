@@ -35,6 +35,7 @@ INSERT INTO usuario VALUES (324, 'Luis Rodriguez', 'abcd12345', 'Lamadrid 5203')
 INSERT INTO usuario VALUES (421, 'Rosario Martinez', 'qwerty12345', 'Lavalle 222');
 INSERT INTO usuario VALUES (5205, 'Ana Tinoco', 'q1w2e3r4t5', 'Gral. San Martin 3244');
 INSERT INTO usuario VALUES (722, 'Rocio Atlantis', 'qazwsx741852', 'Av. Del Libertador 150');
+INSERT INTO usuario VALUES (27, 'Marcos Alonso', 'abch 654321', 'Rodolfo Lopez 1001');
 
 *****************
 
